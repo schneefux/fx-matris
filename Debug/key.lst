@@ -1,0 +1,335 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:12  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: G:\Casio SDK\Projekte\Matris\key.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+           key.c     1    int OSVersionAsInt(void)
+P   00000000              _OSVersionAsInt:                 ; function: OSVersionAsInt
+                                                           ; frame size=20
+    00000000 4F22                   STS.L       PR,@-R15
+    00000002 7FF0                   ADD         #-16,R15
+           key.c     2    {
+           key.c     3            unsigned char mainversion;
+           key.c     4            unsigned char minorversion;
+           key.c     5            unsigned short release;
+           key.c     6            unsigned short build;
+           key.c     7            GlibGetOSVersionInfo( &mainversion, &minorversion, &release, &build );
+    00000004 D333                   MOV.L       L259,R3    ; _GlibGetOSVersionInfo
+    00000006 67F3                   MOV         R15,R7
+    00000008 770C                   ADD         #12,R7
+    0000000A 66F3                   MOV         R15,R6
+    0000000C 7608                   ADD         #8,R6
+    0000000E 65F3                   MOV         R15,R5
+    00000010 7504                   ADD         #4,R5
+    00000012 430B                   JSR         @R3
+    00000014 64F3                   MOV         R15,R4
+           key.c     8            return ( ( mainversion << 24 ) & 0xFF000000 ) | ( ( minorversion << 16 ) & 0x00FF0000 ) | ( releas
+                         +e & 0x0000FFFF );
+    00000016 60F0                   MOV.B       @R15,R0
+    00000018 D32F                   MOV.L       L259+4,R3  ; H'FF000000
+    0000001A 600C                   EXTU.B      R0,R0
+    0000001C D22F                   MOV.L       L259+8,R2  ; H'00FF0000
+    0000001E 4028                   SHLL16      R0
+    00000020 4018                   SHLL8       R0
+    00000022 2039                   AND         R3,R0
+    00000024 6103                   MOV         R0,R1
+    00000026 84F4                   MOV.B       @(4,R15),R0
+    00000028 600C                   EXTU.B      R0,R0
+    0000002A 4028                   SHLL16      R0
+    0000002C 2029                   AND         R2,R0
+    0000002E 201B                   OR          R1,R0
+    00000030 6103                   MOV         R0,R1
+    00000032 85F4                   MOV.W       @(8,R15),R0
+    00000034 600D                   EXTU.W      R0,R0
+           key.c     9    }
+    00000036 7F10                   ADD         #16,R15
+    00000038 4F26                   LDS.L       @R15+,PR
+    0000003A 000B                   RTS
+    0000003C 201B                   OR          R1,R0
+           key.c    10    
+           key.c    11    #define isOS2 (OSVersionAsInt() >= 0x02020000)
+           key.c    12    
+           key.c    13    const unsigned short* keyboardregister = (unsigned short*)0xA44B0000;
+           key.c    14    
+           key.c    15    unsigned short key[8];
+           key.c    16    
+           key.c    17    int KeyDown(int keycode)
+    0000003E              _KeyDown:                        ; function: KeyDown
+                                                           ; frame size=32
+                                                           ; used runtime library name:
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:12  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+                                                           ; __divls, __modls
+    0000003E 2FE6                   MOV.L       R14,@-R15
+    00000040 2FD6                   MOV.L       R13,@-R15
+    00000042 4F22                   STS.L       PR,@-R15
+    00000044 7FEC                   ADD         #-20,R15
+           key.c    18    {
+           key.c    19            if(isOS2)
+    00000046 BFDB                   BSR         _OSVersionAsInt
+    00000048 6E43                   MOV         R4,R14
+    0000004A D225                   MOV.L       L259+12,R2 ; H'02020000
+    0000004C 3023                   CMP/GE      R2,R0
+    0000004E 8B27                   BF          L255
+           key.c    20            {
+           key.c    21                    int row, col, word, bit; 
+           key.c    22            
+           key.c    23                    row = keycode%10; 
+    00000050 D324                   MOV.L       L259+16,R3 ; __modls
+    00000052 E50A                   MOV         #10,R5
+    00000054 61E3                   MOV         R14,R1
+    00000056 430B                   JSR         @R3
+    00000058 6053                   MOV         R5,R0
+    0000005A 6403                   MOV         R0,R4
+           key.c    24                    col = keycode/10-1; 
+    0000005C D322                   MOV.L       L259+20,R3 ; __divls
+    0000005E 61E3                   MOV         R14,R1
+    00000060 430B                   JSR         @R3
+    00000062 6053                   MOV         R5,R0
+           key.c    25                    word = row>>1; 
+           key.c    26                    bit = col + 8*(row&1); 
+           key.c    27                    
+           key.c    28                    memcpy(&key, keyboardregister, 8 * sizeof(unsigned short));
+    00000064 D221                   MOV.L       L259+24,R2 ; _keyboardregister
+    00000066 6503                   MOV         R0,R5
+    00000068 75FF                   ADD         #-1,R5
+    0000006A 6143                   MOV         R4,R1
+    0000006C 4121                   SHAR        R1
+    0000006E E301                   MOV         #1,R3
+    00000070 1F11                   MOV.L       R1,@(4,R15)
+    00000072 E610                   MOV         #16,R6
+    00000074 D11F                   MOV.L       L259+32,R1 ; _memcpy
+    00000076 2439                   AND         R3,R4
+    00000078 4408                   SHLL2       R4
+    0000007A 4400                   SHLL        R4
+    0000007C 345C                   ADD         R5,R4
+    0000007E 2F42                   MOV.L       R4,@R15
+    00000080 D41B                   MOV.L       L259+28,R4 ; _key
+    00000082 410B                   JSR         @R1
+    00000084 6522                   MOV.L       @R2,R5
+           key.c    29                    
+           key.c    30                    return (0 != (key[word] & 1<<bit)); 
+    00000086 E201                   MOV         #1,R2
+    00000088 50F1                   MOV.L       @(4,R15),R0
+    0000008A 4000                   SHLL        R0
+    0000008C D118                   MOV.L       L259+28,R1 ; _key
+    0000008E 001D                   MOV.W       @(R0,R1),R0
+    00000090 63F2                   MOV.L       @R15,R3
+    00000092 600D                   EXTU.W      R0,R0
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:12  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000094 423C                   SHAD        R3,R2
+    00000096 2029                   AND         R2,R0
+    00000098 2008                   TST         R0,R0
+    0000009A 0029                   MOVT        R0
+    0000009C A015                   BRA         L257
+    0000009E CA01                   XOR         #1,R0
+    000000A0              L255:                             
+           key.c    31            }
+           key.c    32            else
+           key.c    33            {
+           key.c    34                    unsigned char buffer[12];
+           key.c    35                    KBD_PRGM_GetKey( buffer );
+    000000A0 D115                   MOV.L       L259+36,R1 ; _KBD_PRGM_GetKey
+    000000A2 6DF3                   MOV         R15,R13
+    000000A4 7D08                   ADD         #8,R13
+    000000A6 410B                   JSR         @R1
+    000000A8 64D3                   MOV         R13,R4
+           key.c    36                    return ( buffer[1] & 0x0F ) * 10 + ( ( buffer[2]  & 0xF0 )  >> 4 ) == keycode;
+    000000AA 84D1                   MOV.B       @(1,R13),R0
+    000000AC 600C                   EXTU.B      R0,R0
+    000000AE C90F                   AND         #15,R0
+    000000B0 6303                   MOV         R0,R3
+    000000B2 4008                   SHLL2       R0
+    000000B4 303C                   ADD         R3,R0
+    000000B6 4000                   SHLL        R0
+    000000B8 6203                   MOV         R0,R2
+    000000BA E3FC                   MOV         #-4,R3
+    000000BC 84D2                   MOV.B       @(2,R13),R0
+    000000BE 600C                   EXTU.B      R0,R0
+    000000C0 C9F0                   AND         #240,R0
+    000000C2 403C                   SHAD        R3,R0
+    000000C4 302C                   ADD         R2,R0
+    000000C6 30E0                   CMP/EQ      R14,R0
+    000000C8 0029                   MOVT        R0
+           key.c    37            }
+           key.c    38    }
+    000000CA              L257:                             
+    000000CA 7F14                   ADD         #20,R15
+    000000CC 4F26                   LDS.L       @R15+,PR
+    000000CE 6DF6                   MOV.L       @R15+,R13
+    000000D0 000B                   RTS
+    000000D2 6EF6                   MOV.L       @R15+,R14
+    000000D4              L259:                             
+    000000D4 <00000000>             .DATA.L     _GlibGetOSVersionInfo
+    000000D8 FF000000               .DATA.L     H'FF000000
+    000000DC 00FF0000               .DATA.L     H'00FF0000
+    000000E0 02020000               .DATA.L     H'02020000
+    000000E4 <00000000>             .DATA.L     __modls
+    000000E8 <00000000>             .DATA.L     __divls
+    000000EC <00000000>             .DATA.L     _keyboardregister
+    000000F0 <00000000>             .DATA.L     _key
+    000000F4 <00000000>             .DATA.L     _memcpy
+    000000F8 <00000000>             .DATA.L     _KBD_PRGM_GetKey
+           key.c    39    
+D   00000000              _keyboardregister:               ; static: keyboardregister
+    00000000 A44B0000               .DATA.L     H'A44B0000
+B   00000000              _key:                            ; static: key
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:12  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000000 00000010               .RES.W      8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:12  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       39
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               000000FC Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000004 Byte(s)
+BSS      SECTION (B):                               00000010 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000110 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            5
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           4
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\Timo\AppData\Local\Temp\hmk46D1.tmp 
+

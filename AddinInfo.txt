@@ -1,0 +1,12 @@
+//------------------------------------------------------------------
+// Addin-Application header control file, created with the CASIO SDK
+//------------------------------------------------------------------
+[OUTPUT]     : "MATRIS.G1A"
+[BINDATA]    : "FXADDINror.bin"
+[DISPNAME]   : "Matris"
+[APPNAME]    : "@MATRIS"
+[VERSION]    : "02.00.0000"
+[APL_ICON]   : "MainIcon.bmp"
+[MODULE_NUM] : 0
+[MOD1_TITLE] : "Matris"
+[MOD1_ICON]  : "eActivityIcon.bmp"

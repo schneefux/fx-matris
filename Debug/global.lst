@@ -1,0 +1,203 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:13  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: G:\Casio SDK\Projekte\Matris\global.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+        global.c     1    #include "global.h"
+        global.c     2    
+        global.c     3    char* pScreen;
+        global.c     4    //pointer to the 3 graybuffers
+        global.c     5    
+        global.c     6    char right = True;
+        global.c     7    char left = True;
+        global.c     8    //can move?
+        global.c     9    
+        global.c    10    char changemap[21][10] = {0};
+        global.c    11    char globalmap  [20][10] = {0};
+        global.c    12    //the two brickmaps: globalmap is the visible one
+        global.c    13    
+        global.c    14    char block;
+        global.c    15    //block type
+        global.c    16    int xpos = 7, ypos = 3;
+        global.c    17    char dir;
+        global.c    18    //position and direction of brick
+        global.c    19    
+        global.c    20    char level;
+        global.c    21    //current level
+        global.c    22    
+        global.c    23    unsigned int points = 0;
+        global.c    24    //points
+        global.c    25    
+        global.c    26    char nextdir = Down;
+        global.c    27    //the direction for the next round
+        global.c    28    
+        global.c    29    char nextblock = 1;
+        global.c    30    //the next block
+        global.c    31    
+        global.c    32    char hold = 0;
+        global.c    33    //the stored brick
+D   00000000              _right:                          ; static: right
+    00000000 01                     .DATA.B     H'01
+    00000001              _left:                           ; static: left
+    00000001 01                     .DATA.B     H'01
+    00000002              _changemap:                      ; static: changemap
+    00000002 00                     .DATA.B     H'00
+    00000003 000000D101             .DATAB.B    209,0
+             00           
+    000000D4              _globalmap:                      ; static: globalmap
+    000000D4 00                     .DATA.B     H'00
+    000000D5 000000C701             .DATAB.B    199,0
+             00           
+    0000019C              _xpos:                           ; static: xpos
+    0000019C 00000007               .DATA.L     H'00000007
+    000001A0              _ypos:                           ; static: ypos
+    000001A0 00000003               .DATA.L     H'00000003
+    000001A4              _points:                         ; static: points
+    000001A4 00000000               .DATA.L     H'00000000
+    000001A8              _nextdir:                        ; static: nextdir
+    000001A8 00                     .DATA.B     H'00
+    000001A9              _nextblock:                      ; static: nextblock
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:13  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000001A9 01                     .DATA.B     H'01
+    000001AA              _hold:                           ; static: hold
+    000001AA 00                     .DATA.B     H'00
+B   00000000              _pScreen:                        ; static: pScreen
+    00000000 00000004               .RES.L      1
+    00000004              _block:                          ; static: block
+    00000004 00000001               .RES.B      1
+    00000005              _dir:                            ; static: dir
+    00000005 00000001               .RES.B      1
+    00000006              _level:                          ; static: level
+    00000006 00000001               .RES.B      1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Apr-2013 12:26:13  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       33
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000000 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               000001AB Byte(s)
+BSS      SECTION (B):                               00000007 Byte(s)
+
+ TOTAL PROGRAM SIZE: 000001B2 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            0
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:          14
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\Timo\AppData\Local\Temp\hmk4B55.tmp 
+

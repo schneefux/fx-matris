@@ -17,7 +17,7 @@ int xpos = 7, ypos = 3;
 char dir;
 //position and direction of brick
 
-int level;
+char level;
 //current level
 
 unsigned int points = 0;

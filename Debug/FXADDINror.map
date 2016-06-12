@@ -1,0 +1,1025 @@
+Hitachi Optimizing Linkage Editor (Ver. 7.1.03.000)02-Apr-2013 12:26:14
+
+*** Options ***
+
+-subcommand=C:\Users\Timo\AppData\Local\Temp\hmk4DF6.tmp
+noprelink
+sdebug
+rom D=R
+nomessage
+list "G:\Casio SDK\Projekte\Matris\Debug\FXADDINror.map"
+show symbol
+nooptimize
+start P_TOP,P,C,D,C$VTBL,C$INIT/0300200,B_BR_Size,B,R/08100000
+fsymbol P
+nologo
+input "G:\Casio SDK\Projekte\Matris\Debug\Matris.obj" "G:\Casio SDK\Projekte\Matris\Debug\SYSCALLS.obj" "G:\Casio SDK\Projekte\Matris\Debug\key.obj" "G:\Casio SDK\Projekte\Matris\Debug\draw.obj" "G:\Casio SDK\Projekte\Matris\Debug\global.obj"
+input "G:\Casio SDK\OS\FX\lib\setup.obj"
+library "G:\Casio SDK\OS\FX\lib\fx9860G_library.lib"
+library "G:\Casio SDK\OS\FX\lib\revolution.lib"
+output "G:\Casio SDK\Projekte\Matris\Debug\FXADDINror.abs"
+-nomessage=1100
+end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+
+P_TOP
+                                  00300200  00300213        14   4
+P
+                                  00300214  00305ff1      5dde   4
+C
+                                  00305ff4  0030638b       398   4
+D
+                                  0030638c  00307517      118c   4
+B_BR_Size
+                                  08100000  08100003         4   4
+B
+                                  08100004  08100023        20   4
+R
+                                  08100024  081011af      118c   4
+
+*** Symbol List ***
+
+SECTION=
+FILE=                               START        END    SIZE
+  SYMBOL                            ADDR        SIZE    INFO      COUNTS  OPT
+
+SECTION=P_TOP
+FILE=G:\Casio SDK\Projekte\Matris\Debug\Matris.obj
+                                  00300200  00300213        14
+  _InitializeSystem
+                                  00300200        14   func ,g         * 
+
+SECTION=P
+FILE=G:\Casio SDK\Projekte\Matris\Debug\Matris.obj
+                                  00300214  0030119b       f88
+  _APP_EnableRestart
+                                  00300214        52   func ,g         * 
+  _kiss
+                                  00300266        5c   func ,g         * 
+  _seedkiss
+                                  003002c2        10   func ,g         * 
+  _drawbuffer
+                                  003002d2        7e   func ,g         * 
+  _RestGray
+                                  00300350        1e   func ,g         * 
+  _Disconnect
+                                  0030036e        12   func ,g         * 
+  _TeacherMode
+                                  00300380        18   func ,g         * 
+  _round
+                                  00300398        2a   func ,g         * 
+  _clrbuffer
+                                  003003c2         8   func ,g         * 
+  _CreateBlock
+                                  003003ca        9e   func ,g         * 
+  _ResetValues
+                                  00300468       164   func ,g         * 
+  _Transfer
+                                  003005cc       166   func ,g         * 
+  _receive
+                                  00300732        36   func ,g         * 
+  _Connect
+                                  00300768        c4   func ,g         * 
+  _SwapPieces
+                                  0030082c        5c   func ,g         * 
+  _Rotate
+                                  00300888        36   func ,g         * 
+  _MoveBlock
+                                  003008be        aa   func ,g         * 
+  _CheckPoints
+                                  00300968       358   func ,g         * 
+  _ReadKey
+                                  00300cc0        98   func ,g         * 
+  _Main
+                                  00300d58        ee   func ,g         * 
+  _CallMain
+                                  00300e46        e0   func ,g         * 
+  _ReadMenuKeys
+                                  00300f26        46   func ,g         * 
+  _AddIn_main
+                                  00300f6c       230   func ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\SYSCALLS.obj
+                                  0030119c  003014ab       310
+  _Serial_ReadOneByte
+                                  0030119c         0   none ,g         * 
+  _Serial_BufferedTransmitOneByte
+                                  003011ac         0   none ,g         * 
+  _Serial_Open
+                                  003011bc         0   none ,g         * 
+  _Serial_Close
+                                  003011cc         0   none ,g         * 
+  _Serial_ClearReceiveBuffer
+                                  003011dc         0   none ,g         * 
+  _RTC_GetTicks
+                                  003011ec         0   none ,g         * 
+  _KBD_PRGM_GetKey
+                                  003011fc         0   none ,g         * 
+  _Disp_GetVRAMPtr
+                                  0030120c         0   none ,g         * 
+  _PutDisp_DD
+                                  0030121c         0   none ,g         * 
+  _DrawLineVRAM
+                                  0030122c         0   none ,g         * 
+  _AllClr_DD
+                                  0030123c         0   none ,g         * 
+  _AllClr_VRAM
+                                  0030124c         0   none ,g         * 
+  _AllClr_DDVRAM
+                                  0030125c         0   none ,g         * 
+  _Sleep
+                                  0030126c         0   none ,g         * 
+  _GetKey
+                                  0030127c         0   none ,g         * 
+  _locate
+                                  0030128c         0   none ,g         * 
+  _Print
+                                  0030129c         0   none ,g         * 
+  _Timer_Install
+                                  003012ac         0   none ,g         * 
+  _Timer_Uninstall
+                                  003012bc         0   none ,g         * 
+  _Timer_Start
+                                  003012cc         0   none ,g         * 
+  _itoa
+                                  003012dc         0   none ,g         * 
+  _EditExpression
+                                  003012ec         0   none ,g         * 
+  _Reboot
+                                  003012fc         0   none ,g         * 
+  _RTC_SetDateTime
+                                  0030130c         0   none ,g         * 
+  _RTC_Reset
+                                  0030131c         0   none ,g         * 
+  _RTC_GetTime
+                                  0030132c         0   none ,g         * 
+  _PowerOff
+                                  0030133c         0   none ,g         * 
+  _Serial_WriteByte
+                                  0030134c         0   none ,g         * 
+  _PutKey
+                                  0030135c         0   none ,g         * 
+  _ShapeToDD
+                                  0030136c         0   none ,g         * 
+  _InputString
+                                  0030137c         0   none ,g         * 
+  _App_CONICS
+                                  0030138c         0   none ,g         * 
+  _App_DYNA
+                                  0030139c         0   none ,g         * 
+  _App_EQUA
+                                  003013ac         0   none ,g         * 
+  _App_PROG
+                                  003013bc         0   none ,g         * 
+  _App_FINANCE
+                                  003013cc         0   none ,g         * 
+  _App_GRAPH_TABLE
+                                  003013dc         0   none ,g         * 
+  _App_LINK
+                                  003013ec         0   none ,g         * 
+  _App_MEMORY
+                                  003013fc         0   none ,g         * 
+  _App_RECUR
+                                  0030140c         0   none ,g         * 
+  _App_RUN_MAT
+                                  0030141c         0   none ,g         * 
+  _App_RUN_STAT
+                                  0030142c         0   none ,g         * 
+  _App_SYSTEM
+                                  0030143c         0   none ,g         * 
+  _InputDateDialog
+                                  0030144c         0   none ,g         * 
+  _BCD_SetAsInt
+                                  0030145c         0   none ,g         * 
+  _GlibGetOSVersionInfo
+                                  0030146c         0   none ,g         * 
+  _LongToAsc
+                                  0030147c         0   none ,g         * 
+  _USB_CaptureDisplay
+                                  0030148c         0   none ,g         * 
+  _GetMiniGlyph
+                                  0030149c         0   none ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\key.obj
+                                  003014ac  003015a7        fc
+  _OSVersionAsInt
+                                  003014ac        3e   func ,g         * 
+  _KeyDown
+                                  003014ea        be   func ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\draw.obj
+                                  003015a8  00302eab      1904
+  _pixel
+                                  003015a8        6e   func ,g         * 
+  _pixelgray
+                                  00301616        6a   func ,g         * 
+  _line
+                                  00301680        fe   func ,g         * 
+  _drawChar
+                                  0030177e        8e   func ,g         * 
+  _drawString
+                                  0030180c        36   func ,g         * 
+  _drawNumber
+                                  00301842        8c   func ,g         * 
+  _fillbox
+                                  003018ce        8e   func ,g         * 
+  _normalfillbox
+                                  0030195c        7e   func ,g         * 
+  _DrawSprite
+                                  003019da       b22   func ,g         * 
+  _DrawBlock
+                                  003024fc       9b0   func ,g         * 
+FILE=G:\Casio SDK\OS\FX\lib\setup.obj
+                                  00302eac  00302fc7       11c
+  ___LINK_PROTECT
+                                  00302eac         4   func ,g         * 
+  _SetQuitHandler
+                                  00302eb0         6   func ,g         * 
+  _OnAppCloseDefault
+                                  00302eb6        54   func ,g         * 
+  __INITSCT_ADDIN
+                                  00302f0a        48   func ,g         * 
+  _INIT_ADDIN_APPLICATION
+                                  00302f52        76   func ,g         * 
+FILE=r_addd
+                                  00302fc8  00303357       390
+  __subd
+                                  00302fc8         0   none ,g         * 
+  __subdr
+                                  00302fe0         0   none ,g         * 
+  exception1
+                                  00302ff8         0   none ,l         * 
+  return_NaN
+                                  0030300c         0   none ,l         * 
+  return_inf
+                                  00303014         0   none ,l         * 
+  exception2
+                                  00303018         0   none ,l         * 
+  p2_denorm_check
+                                  0030302c         0   none ,l         * 
+  p1_denorm
+                                  00303038         0   none ,l         * 
+  return_p2
+                                  00303044         0   none ,l         * 
+  return_p1
+                                  0030304c         0   none ,l         * 
+  p1_normalize
+                                  0030305a         0   none ,l         * 
+  p1_norm_loop
+                                  00303064         0   none ,l         * 
+  end_p1_norm
+                                  0030306e         0   none ,l         * 
+  p2_normalize
+                                  0030306e         0   none ,l         * 
+  p2_norm_loop
+                                  00303078         0   none ,l         * 
+  end_p2_norm
+                                  00303082         0   none ,l         * 
+  swap_end
+                                  0030308a         0   none ,l         * 
+  return_zero
+                                  0030308e         0   none ,l         * 
+  __addd
+                                  00303098         0   none ,g         * 
+  sub_in
+                                  003030aa         0   none ,l         * 
+  rotation
+                                  003030ca         0   none ,l         * 
+  exception_return
+                                  003030f6         0   none ,l         * 
+  sftr1
+                                  00303138         0   none ,l         * 
+  e_sftr31
+                                  0030313c         0   none ,l         * 
+  e_sftr55
+                                  00303162         0   none ,l         * 
+  sftr_loop
+                                  00303168         0   none ,l         * 
+  end_sftr
+                                  00303170         0   none ,l         * 
+  mantissa_sub
+                                  00303194         0   none ,l         * 
+  man_sub1
+                                  0030319c         0   none ,l         * 
+  normalize
+                                  003031aa         0   none ,l         * 
+  norm32_end
+                                  003031b4         0   none ,l         * 
+  norm16_end
+                                  003031c4         0   none ,l         * 
+  over_norm
+                                  003031ca         0   none ,l         * 
+  overnorm_end
+                                  003031f6         0   none ,l         * 
+  norm_loop
+                                  003031fc         0   none ,l         * 
+  end_calc
+                                  00303224         0   none ,l         * 
+  end_norm
+                                  00303224         0   none ,l         * 
+  denormalize_loop
+                                  0030322c         0   none ,l         * 
+  round
+                                  00303234         0   none ,l         * 
+  end_denormal
+                                  00303234         0   none ,l         * 
+  round_carry
+                                  0030324c         0   none ,l         * 
+  end_round
+                                  00303252         0   none ,l         * 
+  return_value
+                                  00303252         0   none ,l         * 
+  return
+                                  00303270         0   none ,l         * 
+  plus_zero
+                                  00303290         0   none ,l         * 
+  swap
+                                  0030329a         0   none ,l         * 
+  EXP_INF
+                                  003032b4         0   none ,l         * 
+  MMASK
+                                  003032b8         0   none ,l         * 
+  MSB
+                                  003032bc         0   none ,l         * 
+  LOWMASK
+                                  003032c0         0   none ,l         * 
+  CARRY_CHECK
+                                  003032c4         0   none ,l         * 
+  NORMAL
+                                  003032c8         0   none ,l         * 
+  SIGN
+                                  003032cc         0   none ,l         * 
+  HALF
+                                  003032d0         0   none ,l         * 
+  sftrtbl
+                                  003032d4         0   none ,l         * 
+FILE=r_dtoi
+                                  00303358  003033e3        8c
+  __dtou
+                                  00303358         0   none ,g         * 
+  __dtoi
+                                  00303358         0   none ,g         * 
+  loop_sftl
+                                  00303398         0   none ,l         * 
+  shift_low
+                                  003033a2         0   none ,l         * 
+  shift_low1
+                                  003033aa         0   none ,l         * 
+  shift_r
+                                  003033b4         0   none ,l         * 
+  shift_r1
+                                  003033b6         0   none ,l         * 
+  end_shift
+                                  003033bc         0   none ,l         * 
+  return
+                                  003033c2         0   none ,l         * 
+  end_nagate
+                                  003033c2         0   none ,l         * 
+  return_zero
+                                  003033d0         0   none ,l         * 
+  EXP_INF
+                                  003033d4         0   none ,l         * 
+  MMASK
+                                  003033d8         0   none ,l         * 
+  MSB
+                                  003033dc         0   none ,l         * 
+  BIAS
+                                  003033e0         0   none ,l         * 
+FILE=r_stod
+                                  003033e4  0030346b        88
+  __stod
+                                  003033e4         0   none ,g         * 
+  exception_return
+                                  00303402         0   none ,l         * 
+  pack
+                                  00303406         0   none ,l         * 
+  return
+                                  00303422         0   none ,l         * 
+  exception1
+                                  00303432         0   none ,l         * 
+  return_NaN
+                                  0030343c         0   none ,l         * 
+  exception2
+                                  00303442         0   none ,l         * 
+  p1_norm_loop
+                                  0030344a         0   none ,l         * 
+  end_p1_norm
+                                  00303450         0   none ,l         * 
+  return_zero
+                                  00303454         0   none ,l         * 
+  EXP_INF
+                                  00303458         0   none ,l         * 
+  MMASK
+                                  0030345c         0   none ,l         * 
+  RET_INF
+                                  00303460         0   none ,l         * 
+  NAN
+                                  00303464         0   none ,l         * 
+  DEF_BIAS
+                                  00303468         0   none ,l         * 
+FILE=__divls
+                                  0030346c  0030351f        b4
+  __divls
+                                  0030346c         0   none ,g         * 
+  divls_zero
+                                  0030350a         0   none ,l         * 
+  A_errno
+                                  00303518         0   none ,l         * 
+  n_zerono
+                                  0030351c         0   none ,l         * 
+FILE=__divlu
+                                  00303520  003035c7        a8
+  __divlu
+                                  00303520         0   none ,g         * 
+  divlu_zero
+                                  003035b2         0   none ,l         * 
+  A_errno
+                                  003035c0         0   none ,l         * 
+  n_zerono
+                                  003035c4         0   none ,l         * 
+FILE=__modls
+                                  003035c8  0030368f        c8
+  __modls
+                                  003035c8         0   none ,g         * 
+  modls_L
+                                  0030366e         0   none ,l         * 
+  modls_zero
+                                  0030367a         0   none ,l         * 
+  A_errno
+                                  00303688         0   none ,l         * 
+  n_zerono
+                                  0030368c         0   none ,l         * 
+FILE=__modlu
+                                  00303690  00303747        b8
+  __modlu
+                                  00303690         0   none ,g         * 
+  modlu_L
+                                  00303728         0   none ,l         * 
+  modlu_zero
+                                  00303730         0   none ,l         * 
+  A_errno
+                                  00303740         0   none ,l         * 
+  n_zerono
+                                  00303744         0   none ,l         * 
+FILE=memcpy
+                                  00303748  00303805        be
+  _memcpy
+                                  00303748        be   func ,g         * 
+FILE=memset
+                                  00303808  0030381f        18
+  _memset
+                                  00303808        18   func ,g         * 
+FILE=sprintf
+                                  00303820  0030385b        3c
+  _sprintf
+                                  00303820        3c   func ,g         * 
+FILE=_Bdel_cychdr
+                                  0030385c  0030386b        10
+  _Bdel_cychdr
+                                  0030385c         0   none ,g         * 
+FILE=_BfileFLS_CloseFile
+                                  0030386c  0030387b        10
+  _BfileFLS_CloseFile
+                                  0030386c         0   none ,g         * 
+FILE=_Bkey_Set_RepeatTime_Default
+                                  0030387c  0030388b        10
+  _Bkey_Set_RepeatTime_Default
+                                  0030387c         0   none ,g         * 
+FILE=_CallbackAtQuitMainFunction
+                                  0030388c  0030389b        10
+  _CallbackAtQuitMainFunction
+                                  0030388c         0   none ,g         * 
+FILE=_flsFindClose
+                                  0030389c  003038ab        10
+  _flsFindClose
+                                  0030389c         0   none ,g         * 
+FILE=_free
+                                  003038ac  003038bb        10
+  _free
+                                  003038ac         0   none ,g         * 
+FILE=_GLibAddinAplExecutionCheck
+                                  003038bc  003038cb        10
+  _GLibAddinAplExecutionCheck
+                                  003038bc         0   none ,g         * 
+FILE=_Hmem_SetMMU
+                                  003038cc  003038db        10
+  _Hmem_SetMMU
+                                  003038cc         0   none ,g         * 
+FILE=_malloc
+                                  003038dc  003038eb        10
+  _malloc
+                                  003038dc         0   none ,g         * 
+FILE=_PopUpWin
+                                  003038ec  003038fb        10
+  _PopUpWin
+                                  003038ec         0   none ,g         * 
+FILE=_PrintC
+                                  003038fc  0030390b        10
+  _PrintC
+                                  003038fc         0   none ,g         * 
+FILE=_fmtout
+                                  0030390c  003049f7      10ec
+  __fmtout
+                                  0030390c       768   func ,g         * 
+  __ltostr
+                                  00304074       20a   func ,l         * 
+  __xtostr
+                                  0030427e       68e   func ,l         * 
+  __round
+                                  0030490c        60   func ,l         * 
+  __putstr
+                                  0030496c        58   func ,l         * 
+  __putnull
+                                  003049c4        10   func ,l         * 
+  __puterr
+                                  003049d4        24   func ,l         * 
+FILE=r_eqd
+                                  003049f8  00304a8b        94
+  __eqd
+                                  003049f8         0   none ,g         * 
+  exception_return1
+                                  00304a2a         0   none ,l         * 
+  exception_return2
+                                  00304a2e         0   none ,l         * 
+  exception_return3
+                                  00304a32         0   none ,l         * 
+  false
+                                  00304a3e         0   none ,l         * 
+  return
+                                  00304a40         0   none ,l         * 
+  exception1
+                                  00304a54         0   none ,l         * 
+  exception2
+                                  00304a60         0   none ,l         * 
+  exception3
+                                  00304a6c         0   none ,l         * 
+  EXP_INF
+                                  00304a84         0   none ,l         * 
+  MMASK
+                                  00304a88         0   none ,l         * 
+FILE=_its
+                                  00304a8c  00304bbb       130
+  __its
+                                  00304a8c       130   func ,g         * 
+FILE=_xti
+                                  00304bbc  00304e4b       290
+  __xti
+                                  00304bbc       290   func ,g         * 
+  _la$264
+                                  00304d94         0   none ,l         * 
+FILE=strlen
+                                  00304e4c  00304e5b        10
+  _strlen
+                                  00304e4c        10   func ,g         * 
+FILE=_allzero
+                                  00304e5c  00304e79        1e
+  __allzero
+                                  00304e5c        1e   func ,g         * 
+FILE=_calcnpw
+                                  00304e7c  00304f7b       100
+  __calcnpw
+                                  00304e7c       100   func ,g         * 
+FILE=_log10
+                                  00304f7c  00305243       2c8
+  __log10
+                                  00304f7c        62   func ,g         * 
+  _frexp
+                                  00304fde       12e   func ,l         * 
+  _modf
+                                  0030510c       138   func ,l         * 
+FILE=_lsfts
+                                  00305244  0030528f        4c
+  __lsfts
+                                  00305244        4c   func ,g         * 
+FILE=_pow5
+                                  00305290  003052b3        24
+  __pow5
+                                  00305290        24   func ,g         * 
+FILE=_rsfts
+                                  003052b4  00305309        56
+  __rsfts
+                                  003052b4        56   func ,g         * 
+FILE=_sub
+                                  0030530c  0030539f        94
+  __sub
+                                  0030530c        94   func ,g         * 
+FILE=_umemcmp
+                                  003053a0  003053d3        34
+  __umemcmp
+                                  003053a0        34   func ,g         * 
+FILE=_unpack
+                                  003053d4  0030546f        9c
+  __unpack
+                                  003053d4        9c   func ,g         * 
+FILE=memcmp
+                                  00305470  003054a3        34
+  _memcmp
+                                  00305470        34   func ,g         * 
+FILE=r_itod
+                                  003054a4  003054f7        54
+  __itod
+                                  003054a4         0   none ,g         * 
+  end_negate
+                                  003054b8         0   none ,l         * 
+  sftl_loop
+                                  003054ba         0   none ,l         * 
+  return
+                                  003054dc         0   none ,l         * 
+  return_zero
+                                  003054ec         0   none ,l         * 
+  EXP_32
+                                  003054f4         0   none ,l         * 
+FILE=r_ltd
+                                  003054f8  0030559f        a8
+  __ltd
+                                  003054f8         0   none ,g         * 
+  exception_return1
+                                  0030552a         0   none ,l         * 
+  exception_return2
+                                  0030552e         0   none ,l         * 
+  exception_return3
+                                  00305532         0   none ,l         * 
+  minus
+                                  00305544         0   none ,l         * 
+  sign_def
+                                  0030554c         0   none ,l         * 
+  return
+                                  00305550         0   none ,l         * 
+  exception1
+                                  00305564         0   none ,l         * 
+  exception2
+                                  00305570         0   none ,l         * 
+  exception3
+                                  0030557c         0   none ,l         * 
+  false
+                                  00305594         0   none ,l         * 
+  EXP_INF
+                                  00305598         0   none ,l         * 
+  MMASK
+                                  0030559c         0   none ,l         * 
+FILE=r_muld
+                                  003055a0  003057b3       214
+  exception1
+                                  003055a0         0   none ,l         * 
+  parm2_NaN_check
+                                  003055bc         0   none ,l         * 
+  exception2
+                                  003055c8         0   none ,l         * 
+  exception3
+                                  003055e0         0   none ,l         * 
+  ex3
+                                  003055ec         0   none ,l         * 
+  p1_norm_loop
+                                  003055f6         0   none ,l         * 
+  end_p1_norm
+                                  00305600         0   none ,l         * 
+  exception4
+                                  00305604         0   none ,l         * 
+  ex4
+                                  00305610         0   none ,l         * 
+  p2_norm_loop
+                                  0030561a         0   none ,l         * 
+  end_p2_norm
+                                  00305624         0   none ,l         * 
+  return_zero
+                                  00305628         0   none ,l         * 
+  return_inf
+                                  00305632         0   none ,l         * 
+  return_NaN
+                                  0030563a         0   none ,l         * 
+  __muld
+                                  00305644         0   none ,g         * 
+  exception_return3
+                                  0030569a         0   none ,l         * 
+  exception_return4
+                                  0030569e         0   none ,l         * 
+  mul_man1
+                                  003056e0         0   none ,l         * 
+  end_normalize
+                                  00305704         0   none ,l         * 
+  end_sticky
+                                  0030570a         0   none ,l         * 
+  denormalize_loop
+                                  00305712         0   none ,l         * 
+  round_denormal
+                                  0030571e         0   none ,l         * 
+  end_round_d
+                                  00305734         0   none ,l         * 
+  end_denormal
+                                  00305738         0   none ,l         * 
+  round_carry
+                                  0030574a         0   none ,l         * 
+  end_round
+                                  00305750         0   none ,l         * 
+  return_value
+                                  00305750         0   none ,l         * 
+  return
+                                  0030576e         0   none ,l         * 
+  EXP_INF
+                                  0030579c         0   none ,l         * 
+  MMASK
+                                  003057a0         0   none ,l         * 
+  MSB
+                                  003057a4         0   none ,l         * 
+  CARRY_CHECK
+                                  003057a8         0   none ,l         * 
+  BIAS
+                                  003057ac         0   none ,l         * 
+  DEN_CARRY
+                                  003057b0         0   none ,l         * 
+FILE=r_ned
+                                  003057b4  00305847        94
+  __ned
+                                  003057b4         0   none ,g         * 
+  exception_return1
+                                  003057e6         0   none ,l         * 
+  exception_return2
+                                  003057ea         0   none ,l         * 
+  exception_return3
+                                  003057ee         0   none ,l         * 
+  true
+                                  003057fa         0   none ,l         * 
+  return
+                                  003057fc         0   none ,l         * 
+  exception1
+                                  00305810         0   none ,l         * 
+  exception2
+                                  0030581c         0   none ,l         * 
+  exception3
+                                  00305828         0   none ,l         * 
+  EXP_INF
+                                  00305840         0   none ,l         * 
+  MMASK
+                                  00305844         0   none ,l         * 
+FILE=__divws
+                                  00305848  00305897        50
+  __divws
+                                  00305848         0   none ,g         * 
+  divws_zero
+                                  00305886         0   none ,l         * 
+  A_errno
+                                  00305890         0   none ,l         * 
+  n_zerono
+                                  00305894         0   none ,l         * 
+FILE=_div64
+                                  00305898  00305a2b       194
+  __div64
+                                  00305898       194   func ,g         * 
+FILE=_duchek
+                                  00305a2c  00305a5b        30
+  __duchek
+                                  00305a2c        30   func ,g         * 
+FILE=_lsft
+                                  00305a5c  00305aa1        46
+  __lsft
+                                  00305a5c        46   func ,g         * 
+FILE=_mult64
+                                  00305aa4  00305b13        70
+  __mult64
+                                  00305aa4        70   func ,g         * 
+FILE=_power
+                                  00305b14  00305c67       154
+  __power
+                                  00305b14       154   func ,g         * 
+FILE=_rnd
+                                  00305c68  00305d53        ec
+  __rnd
+                                  00305c68        ec   func ,g         * 
+FILE=_setsbit
+                                  00305d54  00305dd7        84
+  __setsbit
+                                  00305d54        84   func ,g         * 
+FILE=_add
+                                  00305dd8  00305e33        5c
+  __add
+                                  00305dd8        5c   func ,g         * 
+FILE=_mult
+                                  00305e34  00305f0f        dc
+  __mult
+                                  00305e34        dc   func ,g         * 
+FILE=_pow10
+                                  00305f10  00305fa7        98
+  __pow10
+                                  00305f10        98   func ,g         * 
+FILE=_rsft
+                                  00305fa8  00305ff1        4a
+  __rsft
+                                  00305fa8        4a   func ,g         * 
+
+SECTION=C
+FILE=addin_sct
+                                  00306070  00306083        14
+  _B_BGN
+                                  00306070         0   none ,g         * 
+  _B_END
+                                  00306074         0   none ,g         * 
+  _R_BGN
+                                  00306078         0   none ,g         * 
+  _R_END
+                                  0030607c         0   none ,g         * 
+  _D_ROM
+                                  00306080         0   none ,g         * 
+FILE=_ctype
+                                  00306084  00306183       100
+  __ctype
+                                  00306084       100   data ,g         * 
+FILE=_its
+                                  00306184  0030620b        88
+  _table$246
+                                  00306184        88   data ,l         * 
+FILE=_pow5
+                                  0030620c  003062eb        e0
+  _w$238
+                                  0030620c        e0   data ,l         * 
+FILE=_power
+                                  003062ec  0030638b        a0
+  _conmnts$251
+                                  003062ec        80   data ,l         * 
+  _conexp$252
+                                  0030636c        20   data ,l         * 
+
+SECTION=B_BR_Size
+FILE=G:\Casio SDK\Projekte\Matris\Debug\Matris.obj
+                                  08100000  08100003         4
+  _BR_Size
+                                  08100000         4   data ,g         * 
+
+SECTION=B
+FILE=G:\Casio SDK\Projekte\Matris\Debug\Matris.obj
+                                  08100004  08100007         4
+  _swit
+                                  08100004         1   data ,g         * 
+  _ready
+                                  08100005         1   data ,g         * 
+  _canswap
+                                  08100006         1   data ,g         * 
+  _connected
+                                  08100007         1   data ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\key.obj
+                                  08100008  08100017        10
+  _key
+                                  08100008        10   data ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\global.obj
+                                  08100018  0810001e         7
+  _pScreen
+                                  08100018         4   data ,g         * 
+  _block
+                                  0810001c         1   data ,g         * 
+  _dir
+                                  0810001d         1   data ,g         * 
+  _level
+                                  0810001e         1   data ,g         * 
+FILE=_errno
+                                  08100020  08100023         4
+  __errno
+                                  08100020         4   data ,g         * 
+
+SECTION=R
+FILE=G:\Casio SDK\Projekte\Matris\Debug\Matris.obj
+                                  08100024  0810003c        19
+  _seed
+                                  08100024         4   data ,l         * 
+  _y$306
+                                  08100028         4   data ,l         * 
+  _z$307
+                                  0810002c         4   data ,l         * 
+  _c$308
+                                  08100030         4   data ,l         * 
+  _pause
+                                  08100034         1   data ,g         * 
+  _quit
+                                  08100035         1   data ,g         * 
+  _levelchanged
+                                  08100036         1   data ,g         * 
+  _exit
+                                  08100037         1   data ,g         * 
+  _onoff
+                                  08100038         1   data ,g         * 
+  _slowyposdown
+                                  08100039         1   data ,g         * 
+  _receiveline
+                                  0810003a         1   data ,g         * 
+  _sendline
+                                  0810003b         1   data ,g         * 
+  _cantrans
+                                  0810003c         1   data ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\key.obj
+                                  08100040  08100043         4
+  _keyboardregister
+                                  08100040         4   data ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\draw.obj
+                                  08100044  08100fff       fbc
+  _numbers
+                                  08100044       258   data ,g         * 
+  _character
+                                  0810029c       618   data ,g         * 
+  _blockO
+                                  081008b4        c0   data ,g         * 
+  _blockJ
+                                  08100974        90   data ,g         * 
+  _blockT
+                                  08100a04        90   data ,g         * 
+  _blockL
+                                  08100a94        90   data ,g         * 
+  _blockI
+                                  08100b24       100   data ,g         * 
+  _blockZ
+                                  08100c24        90   data ,g         * 
+  _blockS
+                                  08100cb4        90   data ,g         * 
+  _spritesheed
+                                  08100d44       2bc   data ,g         * 
+FILE=G:\Casio SDK\Projekte\Matris\Debug\global.obj
+                                  08101000  081011aa       1ab
+  _right
+                                  08101000         1   data ,g         * 
+  _left
+                                  08101001         1   data ,g         * 
+  _changemap
+                                  08101002        d2   data ,g         * 
+  _globalmap
+                                  081010d4        c8   data ,g         * 
+  _xpos
+                                  0810119c         4   data ,g         * 
+  _ypos
+                                  081011a0         4   data ,g         * 
+  _points
+                                  081011a4         4   data ,g         * 
+  _nextdir
+                                  081011a8         1   data ,g         * 
+  _nextblock
+                                  081011a9         1   data ,g         * 
+  _hold
+                                  081011aa         1   data ,g         * 
+FILE=G:\Casio SDK\OS\FX\lib\setup.obj
+                                  081011ac  081011af         4
+  _gb_OnAppClose
+                                  081011ac         4   data ,g         * 
+
+Absolute value symbols
+FILE=__divls
+  zerodiv
+                                  0000044e         0   none ,l         * 
+FILE=__divlu
+  zerodiv
+                                  0000044e         0   none ,l         * 
+FILE=__modls
+  zerodiv
+                                  0000044e         0   none ,l         * 
+FILE=__modlu
+  zerodiv
+                                  0000044e         0   none ,l         * 
+FILE=_Bdel_cychdr
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_BfileFLS_CloseFile
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_Bkey_Set_RepeatTime_Default
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_CallbackAtQuitMainFunction
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_flsFindClose
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_free
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_GLibAddinAplExecutionCheck
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_Hmem_SetMMU
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_malloc
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_PopUpWin
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=_PrintC
+  __JumpTableTOP
+                                  80010070         0   none ,l         * 
+FILE=__divws
+  zerodiv
+                                  0000044e         0   none ,l         * 
+
+*** Delete Symbols ***
+
+SYMBOL                                SIZE    INFO
+
+*** Variable Accessible with Abs8 ***
+
+SYMBOL                                SIZE    COUNTS  OPTIMIZE
+
+*** Variable Accessible with Abs16 ***
+
+SYMBOL                                SIZE    COUNTS  OPTIMIZE
+
+*** Function Call ***
+
+SYMBOL                              COUNTS  OPTIMIZE

@@ -39,7 +39,7 @@ extern int xpos, ypos;
 extern char dir;
 //position and direction of brick
 
-extern int level;
+extern char level;
 //current level
 
 extern unsigned int points;

@@ -1,8 +1,6 @@
-/*
- * Matris (C) by Casimo, summer 2012
- * licensed as GPLv3+
- */
-
+/*Matris by Casimo is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+see here: http://creativecommons.org/licenses/by-nc-sa/3.0/
+*/
 #include "stdio.h"
 #include "key.h"
 #include "draw.h"
