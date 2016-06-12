@@ -1,0 +1,65 @@
+  .SECTION P,CODE,ALIGN=4
+       .MACRO SYSCALL FUNO, SYSCALLNAME, TAIL=nop
+       .export \SYSCALLNAME'
+\SYSCALLNAME'
+       mov.l #h'\FUNO, r0
+       mov.l #H'80010070, r2
+       jmp @r2
+       \TAIL'
+       .ENDM
+
+   SYSCALL 040C,   _Serial_ReadOneByte
+   SYSCALL 040E,   _Serial_BufferedTransmitOneByte
+   SYSCALL 0418,   _Serial_Open
+   SYSCALL 0419,   _Serial_Close
+   SYSCALL 0413, _Serial_ClearReceiveBuffer
+   SYSCALL 003B,   _RTC_GetTicks
+   SYSCALL 06C4,   _KBD_PRGM_GetKey
+   SYSCALL 0135,    _Disp_GetVRAMPtr
+	SYSCALL 0028, _PutDisp_DD
+	SYSCALL 0030, _DrawLineVRAM
+	SYSCALL 0142, _AllClr_DD
+	SYSCALL 0143, _AllClr_VRAM
+	SYSCALL 0144, _AllClr_DDVRAM
+	SYSCALL 0420, _Sleep
+	SYSCALL 090F, _GetKey
+	SYSCALL 0807, _locate
+	SYSCALL 0808, _Print
+	SYSCALL 0118, _Timer_Install
+	SYSCALL 0119, _Timer_Uninstall
+	SYSCALL 011A, _Timer_Start
+
+	SYSCALL 0160, _itoa
+  	SYSCALL 08DB, _EditExpression
+	SYSCALL 0236, _Reboot
+
+	SYSCALL 023E, _RTC_SetDateTime
+	SYSCALL 0039, _RTC_Reset
+	SYSCALL 003A, _RTC_GetTime
+
+	SYSCALL 03F4, _PowerOff ;PowerOff(int DisplayPowerOffLogo) 
+	SYSCALL 040E, _Serial_WriteByte
+	SYSCALL 0910, _PutKey
+	SYSCALL 0032, _ShapeToDD
+	SYSCALL 0CC5, _InputString
+
+	SYSCALL 0985, _App_CONICS
+	SYSCALL 0998, _App_DYNA
+	SYSCALL 09E2, _App_EQUA
+	SYSCALL 09F5, _App_PROG
+	SYSCALL 0A00, _App_FINANCE
+	SYSCALL 0A48, _App_GRAPH_TABLE
+	SYSCALL 0A4A, _App_LINK
+	SYSCALL 0A6B, _App_MEMORY
+	SYSCALL 0A75, _App_RECUR
+	SYSCALL 0AAE, _App_RUN_MAT
+	SYSCALL 0AC6, _App_RUN_STAT
+	SYSCALL 0AC8, _App_SYSTEM
+
+ 	SYSCALL 0D64, _InputDateDialog
+	SYSCALL 05A6, _BCD_SetAsInt
+	SYSCALL 0015, _GlibGetOSVersionInfo
+	SYSCALL 0160, _LongToAsc
+	SYSCALL 02A0, _USB_CaptureDisplay
+	SYSCALL 0137, _GetMiniGlyph
+   .end
